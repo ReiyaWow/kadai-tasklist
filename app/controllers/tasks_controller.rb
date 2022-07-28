@@ -38,10 +38,11 @@ class TasksController < ApplicationController
     else
       flash.now[:danger] = 'Task は更新されませんでした'
       render :edit
+    end
   end
   
   def destroy
-    @task = Task.find(params[@id])
+    @task = Task.find(params[:id])
     @task.destroy
     
     flash[:success] = 'Task は正常に削除されました'
